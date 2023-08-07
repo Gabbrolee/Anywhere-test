@@ -1,22 +1,22 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class DeviceType {
-  bool deviceType(BuildContext context) {
-    final double deviceWidth = MediaQuery.of(context).size.width;
-    final double deviceHeight = MediaQuery.of(context).size.height;
-    final double diagonalSize = sqrt(
-      (deviceWidth * deviceWidth) + (deviceHeight * deviceHeight),
-    );
+  DeviceType();
 
-    // You can adjust the threshold value to differentiate between tablets and phones
-    const double tabletThreshold = 600.0; // Example threshold, you can adjust this
+  static bool deviceType(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context).size.shortestSide;
 
-
-    print("THE DIAGONAL SIZE IS:$diagonalSize");
-    return diagonalSize >= tabletThreshold;
+    const double tabletThreshold =
+        600.0; // Example threshold, you can adjust this
+    return shortestSide < tabletThreshold;
   }
-}
 
-late bool isTablet;
+  static bool deviceOrientation(context) {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      return true;
+    }
+    return false;
+  }
+
+  static late bool isTablet;
+}

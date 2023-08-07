@@ -11,36 +11,22 @@ class MasterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
-      print('The device is:$isTablet');
+      print('The device is:$DeviceType.isTablet');
     }
     return Material(
       color: AppTheme.white,
       child: SafeArea(
-        child: !isTablet ?
-              const TabletHomeScreen() :
-              const MobileHomeScreen(),
-        // child: Column(
-        //   mainAxisSize: MainAxisSize.max,
-        //   mainAxisAlignment: MainAxisAlignment.start,
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   children: [
-        //     /// TODO: remove unused widget
-        //     // isTablet
-        //     // ? const HomePageTabletView()
-        //     //   : const HomePageMobileView();
-        //     // Flexible(
-        //     //   flex: 1,
-        //     //   child: Container(
-        //     //     color: Colors.orange,
-        //     //   ),
-        //     // ),
-        //     Flexible(
-        //         flex: 10,
-        //         child: !isTablet
-        //             ? const HomePageTabletView()
-        //             : const HomePageMobileView())
-        //   ],
-        // ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Flexible(
+              flex: 1,
+              child: DeviceType.isTablet
+                  ? const MobileHomeScreen()
+                  : const TabletHomeScreen(),
+            )
+          ],
+        ),
       ),
     );
   }

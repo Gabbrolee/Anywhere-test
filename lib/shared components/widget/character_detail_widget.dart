@@ -1,17 +1,18 @@
+import 'package:anywhere/core/app_theme/app_colors.dart';
 import 'package:flutter/material.dart';
-
 
 class CharacterDetailWidget extends StatelessWidget {
   const CharacterDetailWidget({
     super.key,
     required this.title,
     required this.description,
-     this.image,
+    this.image,
   });
 
   final String title;
   final String description;
   final String? image;
+
   ///Todo: use image later as a placeholder
 
   @override
@@ -19,32 +20,36 @@ class CharacterDetailWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Center(
-            child: CircleAvatar(
-              backgroundColor: Colors.red,
-              radius: 60,
-            ),
+          CircleAvatar(
+            backgroundColor: Colors.red,
+            radius: 60,
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           ListTile(
             title: Text(
               "title: $title",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 22,
+                  color: AppTheme.black),
             ),
             subtitle: Wrap(
               children: [
                 Text(
                   "description: $description",
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: AppTheme.black),
                 ),
               ],
             ),
-            tileColor: Colors.black,
           )
         ],
       ),

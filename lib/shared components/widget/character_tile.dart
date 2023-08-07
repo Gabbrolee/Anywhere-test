@@ -19,7 +19,7 @@ class CharacterTiles extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         color: Colors.orange,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),

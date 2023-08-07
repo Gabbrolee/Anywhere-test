@@ -1,0 +1,17 @@
+[33mcommit 42d04649f6c13e6b4658d89aca90014a27bfc6a4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Ameh Christopher <akrine2christophine@gmail.com>
+Date:   Mon Aug 7 10:26:35 2023 +0100
+
+    build re-usable components and complete ui implementation on the mobile screen
+
+[33mcommit 9678ea76435eb76ef64cfe0e22212321aa1a54a2[m
+Author: solomontu <likesolomon2@gmail.com>
+Date:   Sun Aug 6 20:34:12 2023 +0100
+
+    Work in progress
+
+[33mcommit c020fe0937c9855608c7d9d572d10b0bd0328077[m
+Author: solomontu <likesolomon2@gmail.com>
+Date:   Sun Aug 6 15:07:13 2023 +0100
+
+    first commit
