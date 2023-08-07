@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SafeArea(
       child: AppBar(
         backgroundColor: backgroundColor ?? Colors.black,
-        title: Text(title ?? ""),
+        title: Text(title ?? ''),
         centerTitle: true,
         leading: showBackButton
             ? (Platform.isAndroid

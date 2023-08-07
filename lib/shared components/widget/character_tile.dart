@@ -15,22 +15,23 @@ class CharacterTiles extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        elevation: 5.0,
+        elevation: .0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        color: Colors.orange,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text("${index + 1}"),
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
-              const Text("Hello"),
+              Text(
+                "Hello",
+                style: TextStyle(fontSize: 20, overflow: TextOverflow.clip),
+              ),
             ],
           ),
         ),

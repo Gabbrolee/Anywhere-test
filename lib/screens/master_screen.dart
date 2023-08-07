@@ -11,7 +11,7 @@ class MasterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (kDebugMode) {
-      print('The device is:$DeviceType.isTablet');
+      print('The device is:$DeviceInfo.isTablet');
     }
     return Material(
       color: AppTheme.white,
@@ -21,7 +21,7 @@ class MasterScreen extends StatelessWidget {
           children: [
             Flexible(
               flex: 1,
-              child: DeviceType.isTablet
+              child: DeviceInfo.isTablet
                   ? const MobileHomeScreen()
                   : const TabletHomeScreen(),
             )
