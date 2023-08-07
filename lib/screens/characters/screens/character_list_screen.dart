@@ -17,15 +17,18 @@ class CharactersListScreen extends StatelessWidget {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          Expanded(flex: 2, child: CustomTextField()),
+          const Expanded(
+              flex: 4,
+              child:
+                  Align(alignment: Alignment.center, child: CustomTextField())),
           Expanded(
-            flex: DeviceType.deviceOrientation(context) ? 40 : 30,
+            flex: DeviceInfo.deviceOrientation(context) ? 40 : 15,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               itemCount: 30,
               itemBuilder: (BuildContext context, int index) => CharacterTiles(
                   index: index,
-                  onTap: !DeviceType.isTablet
+                  onTap: !DeviceInfo.isTablet
                       ? () {}
                       : () {
                           /// Todo: navigate with Go router

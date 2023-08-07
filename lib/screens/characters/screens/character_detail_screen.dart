@@ -11,7 +11,7 @@ class CharacterDetailScreen extends StatelessWidget {
     return  Scaffold(
       appBar: CustomAppBar(
         title: "Character Detail",
-        showBackButton:DeviceType.isTablet? true:false,
+        showBackButton:DeviceInfo.isTablet? true:false,
       ),
       body: const CharacterDetailWidget(
         title: "This is title",

@@ -12,7 +12,7 @@ class AnyWhereApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerService);
 
-    DeviceType.isTablet = DeviceType.deviceType(context);
+    DeviceInfo.isTablet = DeviceInfo.deviceType(context);
 
     return MaterialApp.router(
       title: 'Anywhere test',

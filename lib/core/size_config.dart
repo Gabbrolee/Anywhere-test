@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DeviceType {
-  DeviceType();
+class DeviceInfo {
+  DeviceInfo();
 
   static bool deviceType(BuildContext context) {
     final double shortestSide = MediaQuery.of(context).size.shortestSide;

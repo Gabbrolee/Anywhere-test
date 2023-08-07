@@ -22,9 +22,13 @@ class CharacterDetailWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.red,
-            radius: 60,
+          Container(
+            height: 120,
+            width: 120,
+            decoration: BoxDecoration(
+                color: Colors.blue,
+                shape: BoxShape.circle,
+                image: DecorationImage(image: Image.network('').image)),
           ),
           const SizedBox(
             height: 5,
