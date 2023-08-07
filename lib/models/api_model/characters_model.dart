@@ -1,5 +1,3 @@
-
-
 import 'package:anywhere/models/api_model/related_topic.dart';
 
 class Character {
@@ -8,16 +6,15 @@ class Character {
   List<RelatedTopics> relatedTopics = <RelatedTopics>[];
 
   factory Character.fromJson(dynamic json) {
+
     return Character(
         relatedTopics: List<RelatedTopics>.from(
             json["RelatedTopics"].map((dynamic element) {
       return RelatedTopics.fromJson(element);
-    })));
+    }) as Iterable<dynamic>));
   }
 
   Character copywith(List<RelatedTopics>? relatedTopics) {
-   return Character(
-    relatedTopics: relatedTopics?? this.relatedTopics
-   );
+    return Character(relatedTopics: relatedTopics ?? this.relatedTopics);
   }
 }

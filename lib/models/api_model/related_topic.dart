@@ -10,7 +10,7 @@ class RelatedTopics {
   factory RelatedTopics.fromJson(dynamic json) {
     return RelatedTopics(
         firstUrl: json["FirstUrl"],
-        icon: json["Icon"],
+        icon: Icon.fromJson(json["Icon"]),
         result: json["Result"],
         text: json["Text"]);
   }
