@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:anywhere/core/app_theme/app_colors.dart';
 
-import '../core/app_theme/app_colors.dart';
-
-class HomePageTabletView extends StatelessWidget {
-  const HomePageTabletView({super.key});
+class TabletHomeScreen extends StatelessWidget {
+  const TabletHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
