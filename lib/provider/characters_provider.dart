@@ -15,9 +15,10 @@ class CharacterProvider extends StateNotifier<Character> {
   Future<void> getAllCharacters() async {
     ApiServices apiServices = ApiServices();
     final Character character = await apiServices.getCharacters();
-    state = state.copywith(character.relatedTopics);
-    print(character.relatedTopics);
+    state = state.copywith(relatedTopics: character.relatedTopics);
   }
 
-
+  void setSelectedItem(int index) {
+    state = state.copywith(selectedItem: state.relatedTopics[index]);
+  }
 }

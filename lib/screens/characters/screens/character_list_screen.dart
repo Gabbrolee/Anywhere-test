@@ -32,16 +32,7 @@ class CharactersListScreen extends ConsumerWidget {
               itemBuilder: (BuildContext context, int index) => CharacterTiles(
                   index: index,
                   relatedTopics:  ref.watch(characterProvider).relatedTopics[index] ,
-                  onTap: !DeviceInfo.isTablet
-                      ? () {}
-                      : () {
-                          /// Todo: navigate with Go router
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CharacterDetailScreen()));
-                        }),
+                  ),
             ),
           ),
         ],
