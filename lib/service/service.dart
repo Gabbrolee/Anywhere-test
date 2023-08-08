@@ -9,7 +9,7 @@ class ApiServices {
   Future<Character> getCharacters() async {
     final response = await dio
         .get("http://api.duckduckgo.com/?q=simpsons+characters&format=json");
-var jsonResponse =
+    var jsonResponse =
         convert.jsonDecode(response.data) as Map<String, dynamic>;
 
     return Character.fromJson(jsonResponse);
