@@ -1,3 +1,5 @@
+import 'package:anywhere/models/api_model/related_topic.dart';
+import 'package:anywhere/utils.dart';
 import 'package:flutter/material.dart';
 
 class CharacterTiles extends StatelessWidget {
@@ -5,10 +7,12 @@ class CharacterTiles extends StatelessWidget {
     super.key,
     required this.index,
     required this.onTap,
+    required this.relatedTopics
   });
 
   final int index;
   final Function() onTap;
+  final RelatedTopics? relatedTopics;
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +24,17 @@ class CharacterTiles extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
+        child:  Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+             const SizedBox(
                 width: 20,
               ),
               Text(
-                "Hello",
-                style: TextStyle(fontSize: 20, overflow: TextOverflow.clip),
+                Utils.getSplitedString(relatedTopics!.text!).first,
+                style:const TextStyle(fontSize: 20, overflow: TextOverflow.clip),
               ),
             ],
           ),
