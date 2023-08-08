@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class Utils {
   static List<String> getSplitedString(String text) {
     List<String> parts = text.split(' - ');
@@ -6,7 +8,7 @@ class Utils {
   }
 
   static String getImageUrl({String url = ""}) {
-    String baseUrl = "https://duckduckgo.com/";
+     final baseUrl = dotenv.env['IMAGE_BASE_URL']!;
 
     if(url.isNotEmpty){
       url = baseUrl + url;
