@@ -1,4 +1,3 @@
-import 'package:anywhere/screens/characters/screens/character_detail_screen.dart';
 import 'package:anywhere/shared%20components/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,8 +10,8 @@ class CharactersListScreen extends ConsumerWidget {
   const CharactersListScreen({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-      return Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
       appBar: const CustomAppBar(
         title: "Characters List Screen",
       ),
@@ -28,11 +27,16 @@ class CharactersListScreen extends ConsumerWidget {
             flex: DeviceInfo.deviceOrientation(context) ? 40 : 15,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
-              itemCount: ref.watch(characterProvider).relatedTopics.length,
+              itemCount: (ref.watch(characterProvider).searchItems.isNotEmpty)
+                  ? ref.watch(characterProvider).searchItems.length
+                  : ref.watch(characterProvider).relatedTopics.length,
               itemBuilder: (BuildContext context, int index) => CharacterTiles(
-                  index: index,
-                  relatedTopics:  ref.watch(characterProvider).relatedTopics[index] ,
-                  ),
+                index: index,
+                relatedTopics:
+                    (ref.watch(characterProvider).searchItems.isNotEmpty)
+                        ? ref.watch(characterProvider).searchItems[index]
+                        : ref.watch(characterProvider).relatedTopics[index],
+              ),
             ),
           ),
         ],
@@ -40,5 +44,3 @@ class CharactersListScreen extends ConsumerWidget {
     );
   }
 }
-
-
