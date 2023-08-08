@@ -8,7 +8,7 @@ class TabletHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Material(
+    return  const Material(
       color: AppTheme.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
