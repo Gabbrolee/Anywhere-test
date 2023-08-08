@@ -1,7 +1,8 @@
+import 'package:anywhere/core/app_theme/app_colors.dart';
 import 'package:anywhere/screens/characters/screens/character_detail_screen.dart';
 import 'package:anywhere/shared%20components/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import '../../../core/size_config.dart';
+import '../../../core/device_info.dart';
 import '../../../shared components/widget/character_tile.dart';
 import '../../../shared components/widget/custom_appbar.dart';
 
@@ -16,6 +17,7 @@ class CharactersListScreen extends StatelessWidget {
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Expanded(
               flex: 4,

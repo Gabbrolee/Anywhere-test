@@ -22,33 +22,43 @@ class CharacterDetailWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 120,
-            width: 120,
-            decoration: BoxDecoration(
-                color: Colors.blue,
-                shape: BoxShape.circle,
-                image: DecorationImage(image: Image.network('').image)),
-          ),
+
+          image == null
+              ? Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: AppTheme.water)),
+                  child: Icon(Icons.person_outlined,size: 100,),
+                )
+              : Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(image: Image.network('').image),
+                      border: Border.all(color: AppTheme.water)),
+                ),
           const SizedBox(
             height: 5,
           ),
           ListTile(
             title: Text(
-              "title: $title",
+              'Title: $title',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 22,
+
+                  fontSize: 20,
                   color: AppTheme.black),
             ),
             subtitle: Wrap(
               children: [
                 Text(
-                  "description: $description",
+                  'Description: $description',
                   style: const TextStyle(
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                       fontSize: 16,
                       color: AppTheme.black),
                 ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/app_router.dart';
 import 'core/app_theme/App_theme.dart';
-import 'core/size_config.dart';
+import 'core/device_info.dart';
 
 
 class AnyWhereApp extends ConsumerWidget {
