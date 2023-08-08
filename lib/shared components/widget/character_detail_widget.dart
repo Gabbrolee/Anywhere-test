@@ -23,7 +23,7 @@ class CharacterDetailWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          image == null
+          image!.isEmpty
               ? Container(
                   height: 120,
                   width: 120,
@@ -37,7 +37,7 @@ class CharacterDetailWidget extends StatelessWidget {
                   width: 120,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(image: Image.network('').image),
+                      image: DecorationImage(image: Image.network(image!).image),
                       border: Border.all(color: AppTheme.water)),
                 ),
           const SizedBox(

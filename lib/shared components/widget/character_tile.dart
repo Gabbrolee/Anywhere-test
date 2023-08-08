@@ -30,8 +30,9 @@ class CharacterTiles extends ConsumerWidget {
         }
       },
       child: Card(
-        elevation: .0,
+        elevation: 5,
         shape: RoundedRectangleBorder(
+          side:const BorderSide(color: Colors.black45),
           borderRadius: BorderRadius.circular(10),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

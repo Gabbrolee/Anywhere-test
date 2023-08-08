@@ -19,6 +19,7 @@ class CharacterDetailScreen extends ConsumerWidget {
       body:  CharacterDetailWidget(
         title: Utils.getSplitedString(ref.watch(characterProvider).selectedItem!.text!).first,
         description:  Utils.getSplitedString(ref.watch(characterProvider).selectedItem!.text!).last,
+        image: Utils.getImageUrl(url:ref.watch(characterProvider).selectedItem!.icon!.url!)
       ),
     );
   }

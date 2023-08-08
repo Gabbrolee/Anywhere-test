@@ -16,6 +16,7 @@ class CharacterProvider extends StateNotifier<Character> {
     ApiServices apiServices = ApiServices();
     final Character character = await apiServices.getCharacters();
     state = state.copywith(relatedTopics: character.relatedTopics);
+   
   }
 
   void setSelectedItem(int index) {
