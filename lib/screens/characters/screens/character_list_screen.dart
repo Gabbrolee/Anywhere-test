@@ -1,9 +1,9 @@
-import 'package:anywhere/provider/characters_provider.dart';
 import 'package:anywhere/screens/characters/screens/character_detail_screen.dart';
 import 'package:anywhere/shared%20components/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/size_config.dart';
+import '../../../core/device_info.dart';
+import '../../../provider/characters_provider.dart';
 import '../../../shared components/widget/character_tile.dart';
 import '../../../shared components/widget/custom_appbar.dart';
 
@@ -18,6 +18,7 @@ class CharactersListScreen extends ConsumerWidget {
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Expanded(
               flex: 4,

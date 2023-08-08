@@ -1,5 +1,5 @@
 import 'package:anywhere/core/app_theme/app_colors.dart';
-import 'package:anywhere/core/size_config.dart';
+import 'package:anywhere/core/device_info.dart';
 import 'package:anywhere/provider/characters_provider.dart';
 import 'package:anywhere/screens/mobile_home_screen.dart';
 import 'package:anywhere/screens/tablet_home_screen.dart';

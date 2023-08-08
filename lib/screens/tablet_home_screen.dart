@@ -8,15 +8,15 @@ class TabletHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
+    return  Material(
       color: AppTheme.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Flexible(flex: 4, child: CharactersListScreen()),
-          Flexible(flex: 6, child: CharacterDetailScreen())
+          Expanded(flex: 4, child: CharactersListScreen()),
+          Expanded(flex: 6, child: CharacterDetailScreen())
         ],
       ),
     );

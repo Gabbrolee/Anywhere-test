@@ -1,6 +1,6 @@
 import 'package:anywhere/shared%20components/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
-import '../../../core/size_config.dart';
+import '../../../core/device_info.dart';
 import '../../../shared components/widget/character_detail_widget.dart';
 
 class CharacterDetailScreen extends StatelessWidget {
