@@ -18,7 +18,7 @@ class CharacterTiles extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        ref.read(characterProvider.notifier).setSelectedItem(index);
+        ref.read(characterProvider.notifier).setSelectedItem(relatedTopics!);
         if (DeviceInfo.isTablet) {
           Navigator.push(
               context,

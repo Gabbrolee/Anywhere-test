@@ -1,7 +1,10 @@
 import 'package:anywhere/service/service.dart';
+import 'package:anywhere/utils.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/api_model/characters_model.dart';
+import '../models/api_model/related_topic.dart';
 
 final characterProvider =
     StateNotifierProvider<CharacterProvider, Character>((ref) {
@@ -9,17 +12,30 @@ final characterProvider =
 });
 
 class CharacterProvider extends StateNotifier<Character> {
-  CharacterProvider() : super(Character());
+  CharacterProvider() : super(Character().copywith(textEditingController: TextEditingController()));
   Character? characters;
 
   Future<void> getAllCharacters() async {
     ApiServices apiServices = ApiServices();
     final Character character = await apiServices.getCharacters();
     state = state.copywith(relatedTopics: character.relatedTopics);
-   
   }
 
-  void setSelectedItem(int index) {
-    state = state.copywith(selectedItem: state.relatedTopics[index]);
+  void setSelectedItem(RelatedTopics relatedTopics) {
+    state = state.copywith(selectedItem: relatedTopics);
+  }
+
+  List<RelatedTopics> searchCharacterList() {
+    final list = state.relatedTopics
+        .where((element) => Utils.getSplitedString(element.text!
+            .toLowerCase()).first
+            .contains(state.textEditingController!.text.toLowerCase()))
+        .toList();
+
+    return list;
+  }
+
+  void setListItems() {
+    state = state.copywith(searchItems: searchCharacterList());
   }
 }
