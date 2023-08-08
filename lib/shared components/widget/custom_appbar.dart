@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:anywhere/core/app_theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,17 +19,27 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AppBar(
-        backgroundColor: backgroundColor ?? Colors.black,
-        title: Text(title ?? ''),
+        elevation: 0,
+        backgroundColor: backgroundColor ?? AppTheme.white,
+        title: Text(
+          title ?? '',
+          style: TextStyle(color: AppTheme.black, fontSize: 23),
+        ),
         centerTitle: true,
         leading: showBackButton
             ? (Platform.isAndroid
                 ? InkWell(
-                    child: const Icon(Icons.arrow_back),
+                    child: const Icon(
+                      Icons.arrow_back,
+                      color: AppTheme.black,
+                    ),
                     onTap: () => Navigator.pop(context),
                   )
                 : InkWell(
-                    child: const Icon(Icons.arrow_back_ios),
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: AppTheme.black,
+                    ),
                     onTap: () => Navigator.pop(context),
                   ))
             : const SizedBox.shrink(),
