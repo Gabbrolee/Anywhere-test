@@ -18,21 +18,18 @@ class CharacterTiles extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        ref.read(characterProvider.notifier).setSelectedItem(index);
+        ref.read(characterProvider.notifier).setSelectedItem(relatedTopics!);
         if (DeviceInfo.isTablet) {
-      
           Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) => const CharacterDetailScreen()));
-        } else {
-
-        }
+        } else {}
       },
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(
-          side:const BorderSide(color: Colors.black45),
+          side: const BorderSide(color: Colors.black45),
           borderRadius: BorderRadius.circular(10),
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
