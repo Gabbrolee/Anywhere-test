@@ -29,7 +29,7 @@ class CharacterProvider extends StateNotifier<Character> {
   }
 
   List<RelatedTopics> searchCharacterList() {
-    final list = state.relatedTopics
+    final list = state.relatedTopics!
         .where((element) => Utils.getSplitedString(element.text!.toLowerCase())
             .first
             .contains(state.textEditingController!.text.toLowerCase()))

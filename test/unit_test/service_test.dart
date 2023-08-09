@@ -15,31 +15,28 @@ class MockDio extends Mock implements Dio {}
 void main() {
   group('ApiService', () {
     dotenv.load(fileName: '.env');
+
+    ApiServices apiServices = ApiServices();
     CharacterServices characterServices = CharacterServices();
 
-    //Arrange
-    test('getCharacters returns Character object', () async {
-      when(characterServices.getCharacters())
-          .thenAnswer((_) async => Character(relatedTopics: []));
 
-      // Act
+  //This test is to ensure that the api service is working as it should
+    test('Test API response', () async {
+      final response = await apiServices.get();
+      expect(response.statusCode, 200);
+    });
+
+   
+    //This test is to ensure that after the api service runs it is correctly mapped.
+    //This would be known because our expected list should not be empty,
+    test('getCharacters returns Character object', () async {
+     
       final result = await characterServices.getCharacters();
 
-      // Assert
-      expect(result, Character(relatedTopics: []));
+  
+      expect(result.relatedTopics.isNotEmpty, true);
     });
 
-    test(
-        'fetchData throws an exception if the Dio call completes with an error',
-        () async {
-      // Arrange
-      when(characterServices.getCharacters()).thenAnswer((_) async {
-        List<RelatedTopics>? relatedTopics;
-        return Character(relatedTopics: relatedTopics!);
-      });
 
-      // Act and Assert
-      expect(characterServices.getCharacters(), throwsException);
-    });
   });
 }
