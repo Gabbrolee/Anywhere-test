@@ -1,3 +1,4 @@
+import 'package:anywhere/constants/string_constants.dart';
 import 'package:anywhere/core/app_theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,6 @@ class CharacterDetailWidget extends StatelessWidget {
   final String description;
   final String? image;
 
-  ///Todo: use image later as a placeholder
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +21,6 @@ class CharacterDetailWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           image!.isEmpty
               ? Container(
                   height: 120,
@@ -30,14 +28,18 @@ class CharacterDetailWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: AppTheme.water)),
-                  child: Icon(Icons.person_outlined,size: 100,),
+                  child: const Icon(
+                    Icons.person_outlined,
+                    size: 100,
+                  ),
                 )
               : Container(
                   height: 120,
                   width: 120,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(image: Image.network(image!).image),
+                      image:
+                          DecorationImage(image: Image.network(image!).image),
                       border: Border.all(color: AppTheme.water)),
                 ),
           const SizedBox(
@@ -45,24 +47,21 @@ class CharacterDetailWidget extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              'Title: $title',
+              '${AppString.title}: $title}',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-
-                  fontSize: 30,
-                  color: AppTheme.black),
+              style: const TextStyle(fontSize: 30, color: AppTheme.black),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.only(bottom:15.0),
+              padding: const EdgeInsets.only(bottom: 15.0),
               child: Wrap(
                 children: [
                   Text(
-                    'Description: $description',
-                    style: const TextStyle(letterSpacing: 2.0,
+                    '${AppString.description}: $description',
+                    style: const TextStyle(
+                        letterSpacing: 2.0,
                         height: 1.0,
                         fontSize: 20,
-
                         color: AppTheme.black),
                   ),
                 ],

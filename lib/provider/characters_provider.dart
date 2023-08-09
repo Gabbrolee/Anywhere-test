@@ -1,5 +1,4 @@
 import 'package:anywhere/service/charactor_sevices.dart';
-import 'package:anywhere/service/service.dart';
 import 'package:anywhere/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,8 +28,7 @@ class CharacterProvider extends StateNotifier<Character> {
   }
 
   List<RelatedTopics> searchCharacterList() {
-    final list = state.relatedTopics!
-        .where((element) => Utils.getSplitedString(element.text!.toLowerCase())
+    final list = state.relatedTopics.where((element) => Utils.getSplitedString(element.text!.toLowerCase())
             .first
             .contains(state.textEditingController!.text.toLowerCase()))
         .toList();

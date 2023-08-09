@@ -1,3 +1,4 @@
+import 'package:anywhere/constants/string_constants.dart';
 import 'package:anywhere/provider/characters_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,7 +17,7 @@ class CustomTextField extends ConsumerWidget {
         controller: ref.watch(characterProvider).textEditingController,
         decoration: const InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
-            hintText: "Search",
+            hintText: AppString.search,
             prefixIcon: Icon(Icons.search)),
       ),
     );

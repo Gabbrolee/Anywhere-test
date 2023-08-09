@@ -1,10 +1,11 @@
+import 'package:anywhere/constants/route_name.dart';
 import 'package:anywhere/core/device_info.dart';
 import 'package:anywhere/models/api_model/related_topic.dart';
 import 'package:anywhere/provider/characters_provider.dart';
-import 'package:anywhere/screens/characters/screens/character_detail_screen.dart';
 import 'package:anywhere/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class CharacterTiles extends ConsumerWidget {
   const CharacterTiles(
@@ -20,10 +21,7 @@ class CharacterTiles extends ConsumerWidget {
       onTap: () {
         ref.read(characterProvider.notifier).setSelectedItem(relatedTopics!);
         if (DeviceInfo.isTablet) {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const CharacterDetailScreen()));
+          context.pushNamed(RouteName.characterDetail);
         } else {}
       },
       child: Card(
@@ -37,8 +35,10 @@ class CharacterTiles extends ConsumerWidget {
           child: Text(
             Utils.getSplitedString(relatedTopics!.text!).first,
             overflow: TextOverflow.ellipsis,
-            style:
-                const TextStyle(fontSize: 20, overflow: TextOverflow.ellipsis,),
+            style: const TextStyle(
+              fontSize: 20,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:anywhere/shared%20components/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../constants/string_constants.dart';
 import '../../../core/device_info.dart';
 import '../../../provider/characters_provider.dart';
 import '../../../shared components/widget/character_tile.dart';
@@ -13,7 +14,7 @@ class CharactersListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: "Characters List Screen",
+        title: AppString.charactersListScreen,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,

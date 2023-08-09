@@ -3,7 +3,6 @@ import 'package:anywhere/core/device_info.dart';
 import 'package:anywhere/provider/characters_provider.dart';
 import 'package:anywhere/screens/mobile_home_screen.dart';
 import 'package:anywhere/screens/tablet_home_screen.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,9 +22,7 @@ class _MyWidgetState extends ConsumerState<MasterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (kDebugMode) {
-      print('The device is:$DeviceInfo.isTablet');
-    }
+
     return Material(
       color: AppTheme.white,
       child: SafeArea(

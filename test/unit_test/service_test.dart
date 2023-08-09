@@ -1,14 +1,10 @@
-import 'dart:convert';
 
-import 'package:anywhere/models/api_model/characters_model.dart';
-import 'package:anywhere/models/api_model/related_topic.dart';
 import 'package:anywhere/service/charactor_sevices.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart'; // For creating mock objects
 import 'package:dio/dio.dart';
 import 'package:anywhere/service/service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'dart:convert' as convert;
 
 class MockDio extends Mock implements Dio {}
 

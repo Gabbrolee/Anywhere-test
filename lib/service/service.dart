@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 
-import '../models/api_model/characters_model.dart';
-import 'dart:convert' as convert;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 final dio = Dio();

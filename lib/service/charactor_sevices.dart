@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:anywhere/service/service.dart';
-import 'package:dio/dio.dart';
 
 import '../models/api_model/characters_model.dart';
 import 'dart:convert' as convert;
