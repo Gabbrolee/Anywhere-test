@@ -50,19 +50,23 @@ class CharacterDetailWidget extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
 
-                  fontSize: 20,
+                  fontSize: 30,
                   color: AppTheme.black),
             ),
-            subtitle: Wrap(
-              children: [
-                Text(
-                  'Description: $description',
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-                      color: AppTheme.black),
-                ),
-              ],
+            subtitle: Padding(
+              padding: const EdgeInsets.only(bottom:15.0),
+              child: Wrap(
+                children: [
+                  Text(
+                    'Description: $description',
+                    style: const TextStyle(letterSpacing: 2.0,
+                        height: 1.0,
+                        fontSize: 20,
+
+                        color: AppTheme.black),
+                  ),
+                ],
+              ),
             ),
           )
         ],

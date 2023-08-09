@@ -1,3 +1,4 @@
+import 'package:anywhere/service/charactor_sevices.dart';
 import 'package:anywhere/service/service.dart';
 import 'package:anywhere/utils.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +13,13 @@ final characterProvider =
 });
 
 class CharacterProvider extends StateNotifier<Character> {
-  CharacterProvider() : super(Character().copywith(textEditingController: TextEditingController()));
+  CharacterProvider()
+      : super(Character()
+            .copywith(textEditingController: TextEditingController()));
   Character? characters;
 
   Future<void> getAllCharacters() async {
-    ApiServices apiServices = ApiServices();
+    CharacterServices apiServices = CharacterServices();
     final Character character = await apiServices.getCharacters();
     state = state.copywith(relatedTopics: character.relatedTopics);
   }
@@ -27,8 +30,8 @@ class CharacterProvider extends StateNotifier<Character> {
 
   List<RelatedTopics> searchCharacterList() {
     final list = state.relatedTopics
-        .where((element) => Utils.getSplitedString(element.text!
-            .toLowerCase()).first
+        .where((element) => Utils.getSplitedString(element.text!.toLowerCase())
+            .first
             .contains(state.textEditingController!.text.toLowerCase()))
         .toList();
 

@@ -44,7 +44,7 @@ class CharacterTiles extends ConsumerWidget {
               Text(
                 Utils.getSplitedString(relatedTopics!.text!).first,
                 style:
-                    const TextStyle(fontSize: 20, overflow: TextOverflow.clip),
+                    const TextStyle(fontSize: 20, overflow: TextOverflow.ellipsis,),
               ),
             ],
           ),

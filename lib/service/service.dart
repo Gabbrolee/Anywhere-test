@@ -7,12 +7,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 final dio = Dio();
 
 class ApiServices {
-  Future<Character> getCharacters() async {
+  Future<Response> get() async {
     final baseUrl = dotenv.env['BASE_URL']!;
-    final response = await dio.get(baseUrl);
-    var jsonResponse =
-        convert.jsonDecode(response.data) as Map<String, dynamic>;
-
-    return Character.fromJson(jsonResponse);
+    final Response response = await dio.get(baseUrl);
+    return response;
   }
 }
